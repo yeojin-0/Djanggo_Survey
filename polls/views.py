@@ -5,13 +5,6 @@ from django.db.models import F
 from django.urls import reverse
 from django.views import generic
 
-    
-# # 가장 최근 발행된 질문 5개 출력. 쉼표로 구분 / 디자인이 view에 하드코딩 되어있음
-# def latest_question_list(request):
-#     latest_question_list = Question.objects.order_by("-pub_date")[:5]
-#     output = ", ".join([q.question_text for q in latest_question_list])
-#     return HttpResponse(output)
-
 class IndexView(generic.ListView):
     template_name = "polls/index.html"
     context_object_name = "latest_question_list"
